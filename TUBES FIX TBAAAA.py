@@ -1,4 +1,4 @@
-# Kelompok kata untuk Subjek, Predikat, Objek, dan Keterangan
+# Token
 subjek = ["saya", "kamu", "dia", "mereka", "kita"]
 predikat = ["makan", "minum", "baca", "tulis", "lihat"]
 objek = ["nasi", "air", "buku", "surat", "gambar"]
@@ -16,7 +16,7 @@ def token(word):
     else:
         return None
 
-# Meminta pengguna memasukkan 1 kalimat
+# Input User
 kalimat = input('Masukkan 1 kalimat : ').lower()
 kata_kata = kalimat.split()
 
@@ -24,10 +24,9 @@ kata_kata = kalimat.split()
 i = 0
 tokens = []
 while i < len(kata_kata):
-    # Gabungkan dua kata dan periksa apakah mereka membentuk keterangan
     if i < len(kata_kata) - 1 and f"{kata_kata[i]} {kata_kata[i+1]}" in keterangan:
         tokens.append('K')
-        i += 2  # Lompat dua kata
+        i += 2
     else:
         t = token(kata_kata[i])
         if t is not None:
